@@ -47,10 +47,10 @@ def main():
     # Set up arrays for holding event info to be written to branches
     #---------------------------------------------------------
     m_num_particles = array('i',[0])
-    m_event_weight = array('f',[0.0])
-    m_event_scale = array('f',[0.0])
-    m_alpha_em = array('f',[0.0])
-    m_alpha_s = array('f',[0.0])
+    m_event_weight = array('d',[0.0])
+    m_event_scale = array('d',[0.0])
+    m_alpha_em = array('d',[0.0])
+    m_alpha_s = array('d',[0.0])
 
     m_pdgid = std.vector('int')()
     m_status = std.vector('int')()
@@ -58,13 +58,13 @@ def main():
     m_mother2 = std.vector('int')()
     m_color1 = std.vector('int')()
     m_color2 = std.vector('int')()
-    m_px = std.vector('float')()
-    m_py = std.vector('float')()
-    m_pz = std.vector('float')()
-    m_e = std.vector('float')()
-    m_m = std.vector('float')()
-    m_tau = std.vector('float')()
-    m_spin = std.vector('float')()
+    m_px = std.vector('double')()
+    m_py = std.vector('double')()
+    m_pz = std.vector('double')()
+    m_e = std.vector('double')()
+    m_m = std.vector('double')()
+    m_tau = std.vector('double')()
+    m_spin = std.vector('double')()
 
     m_lv = std.vector('TLorentzVector')()
 
@@ -75,10 +75,10 @@ def main():
     my_tree = TTree('mytree','tree of generated events')
 
     my_tree.Branch('numParticles',m_num_particles,'numParticles/I')
-    my_tree.Branch('eventWeight',m_event_weight,'eventWeight/F')
-    my_tree.Branch('eventScale',m_event_scale,'eventScale/F')
-    my_tree.Branch('alphaEM',m_alpha_em,'alphaEM/F')
-    my_tree.Branch('alphaS',m_alpha_s,'alphaS/F')
+    my_tree.Branch('eventWeight',m_event_weight,'eventWeight/D')
+    my_tree.Branch('eventScale',m_event_scale,'eventScale/D')
+    my_tree.Branch('alphaEM',m_alpha_em,'alphaEM/D')
+    my_tree.Branch('alphaS',m_alpha_s,'alphaS/D')
     my_tree.Branch('pdgID',m_pdgid)
     my_tree.Branch('pdgStatus',m_status)
     my_tree.Branch('mother1',m_mother1)
@@ -201,29 +201,6 @@ def lhe2ntuple(input_path = None, output_path = None):
     m_meta_event = Event.MetaEvent(0,0,0,0,0)
 
     #---------------------------------------------------------
-    # Set up arrays for holding event info to be written to branches
-    #---------------------------------------------------------
-    m_num_particles = array('i',[0])
-    m_event_weight = array('f',[0.0])
-    m_event_scale = array('f',[0.0])
-    m_alpha_em = array('f',[0.0])
-    m_alpha_s = array('f',[0.0])
-
-    m_pdgid = std.vector('int')()
-    m_status = std.vector('int')()
-    m_mother1 = std.vector('int')()
-    m_mother2 = std.vector('int')()
-    m_color1 = std.vector('int')()
-    m_color2 = std.vector('int')()
-    m_px = std.vector('float')()
-    m_py = std.vector('float')()
-    m_pz = std.vector('float')()
-    m_e = std.vector('float')()
-    m_m = std.vector('float')()
-    m_tau = std.vector('float')()
-    m_spin = std.vector('float')()
-
-    #---------------------------------------------------------
     # Set up TTree and branches for storing info
     #---------------------------------------------------------
     out_file = TFile(out_f_name,'recreate')
@@ -233,10 +210,10 @@ def lhe2ntuple(input_path = None, output_path = None):
     # Set up arrays for holding event info to be written to branches
     #---------------------------------------------------------
     m_num_particles = array('i',[0])
-    m_event_weight = array('f',[0.0])
-    m_event_scale = array('f',[0.0])
-    m_alpha_em = array('f',[0.0])
-    m_alpha_s = array('f',[0.0])
+    m_event_weight = array('d',[0.0])
+    m_event_scale = array('d',[0.0])
+    m_alpha_em = array('d',[0.0])
+    m_alpha_s = array('d',[0.0])
 
     m_pdgid = std.vector('int')()
     m_status = std.vector('int')()
@@ -244,13 +221,13 @@ def lhe2ntuple(input_path = None, output_path = None):
     m_mother2 = std.vector('int')()
     m_color1 = std.vector('int')()
     m_color2 = std.vector('int')()
-    m_px = std.vector('float')()
-    m_py = std.vector('float')()
-    m_pz = std.vector('float')()
-    m_e = std.vector('float')()
-    m_m = std.vector('float')()
-    m_tau = std.vector('float')()
-    m_spin = std.vector('float')()
+    m_px = std.vector('double')()
+    m_py = std.vector('double')()
+    m_pz = std.vector('double')()
+    m_e = std.vector('double')()
+    m_m = std.vector('double')()
+    m_tau = std.vector('double')()
+    m_spin = std.vector('double')()
 
     m_lv = std.vector('TLorentzVector')()
 
@@ -261,10 +238,10 @@ def lhe2ntuple(input_path = None, output_path = None):
     my_tree = TTree('mytree','tree of generated events')
 
     my_tree.Branch('numParticles',m_num_particles,'numParticles/I')
-    my_tree.Branch('eventWeight',m_event_weight,'eventWeight/F')
-    my_tree.Branch('eventScale',m_event_scale,'eventScale/F')
-    my_tree.Branch('alphaEM',m_alpha_em,'alphaEM/F')
-    my_tree.Branch('alphaS',m_alpha_s,'alphaS/F')
+    my_tree.Branch('eventWeight',m_event_weight,'eventWeight/D')
+    my_tree.Branch('eventScale',m_event_scale,'eventScale/D')
+    my_tree.Branch('alphaEM',m_alpha_em,'alphaEM/D')
+    my_tree.Branch('alphaS',m_alpha_s,'alphaS/D')
     my_tree.Branch('pdgID',m_pdgid)
     my_tree.Branch('pdgStatus',m_status)
     my_tree.Branch('mother1',m_mother1)
