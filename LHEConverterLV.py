@@ -7,7 +7,7 @@
 import sys, argparse
 from ROOT import std,TTree,TFile,TLorentzVector
 from array import array
-import Event
+from . import Event
 
 parser = argparse.ArgumentParser(description="Convert LHE files into ROOT NTuples.")
 parser.add_argument('-i','--input-file',help='name of LHE file to convert',dest='in_file')
