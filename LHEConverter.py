@@ -109,12 +109,14 @@ def main():
         is_event = False
         is_meta = False
         num_skipped_particles = 0
+        
         print("Begin looping over events!")
         for line in input_file:
-            if (line.find("<event>") != -1): #String.find() returns the index at which the argument is found, or -1 if not found
+            if (line.find("<event") != -1): #String.find() returns the index at which the argument is found, or -1 if not found
                 is_event = True
                 is_meta = True
                 l_num_events += 1
+                print(line)
                 continue
             if (line.find("</event>") != -1):
                 is_event = False
@@ -260,7 +262,7 @@ def lhe2ntuple(input_path = None, output_path = None):
         num_skipped_particles = 0
         print("Begin looping over events!")
         for line in input_file:
-            if (line.find("<event>") != -1): #String.find() returns the index at which the argument is found, or -1 if not found
+            if (line.find("<event") != -1): #String.find() returns the index at which the argument is found, or -1 if not found
                 is_event = True
                 is_meta = True
                 l_num_events += 1
